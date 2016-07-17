@@ -46,6 +46,8 @@ module.exports = {
     },
     module: {
         //加载器配置
+        //test: 检测哪些文件需要此loader，是一个正则表达式
+        //exclude: 忽略哪些文件
         loaders: [
             // style & css & less loader
             { test: /\.css$/, loader: "style-loader!css-loader"},//.css 文件使用 style-loader 和 css-loader 来处理
@@ -67,7 +69,7 @@ module.exports = {
             { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'url-loader?limit=8192&name=[name].[ext]'},
         ]
     },
-    //其它解决方案配置
+    //其它解决方案配置。定义能够被打包的文件，文件后缀名
     resolve: {
         root: 'E:/github/flux-example/src', //绝对路径
         extensions: ['', '.js', '.json', '.jsx', '.coffee'], //自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
